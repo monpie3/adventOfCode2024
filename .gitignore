@@ -1,0 +1,6 @@
+puzzle_input.txt
+.venv
+__pycache__
+.pytest_cache
+.vscode
+
