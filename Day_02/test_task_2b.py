@@ -1,4 +1,4 @@
-from task_2a import is_save
+from task_2b import problem_dampener
 
 import pytest
 
@@ -8,10 +8,10 @@ import pytest
         ([7, 6, 4, 2, 1], True),
         ([1, 2, 7, 8, 9], False),
         ([9, 7, 6, 2, 1], False),
-        ([1, 3, 2, 4, 5], False),
-        ([8, 6, 4, 4, 1], False),
+        ([1, 3, 2, 4, 5], True),
+        ([8, 6, 4, 4, 1], True),
         ([1, 3, 6, 7, 9], True),
     ],
 )
-def test_is_save(test_input, expected):
-    assert is_save(test_input) == expected
+def test_problem_dampener(test_input, expected):
+    assert problem_dampener(test_input) == expected
