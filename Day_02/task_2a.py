@@ -7,12 +7,6 @@ def load_reports(filename):
             reports.append(report)
     return reports
 
-def check_difference(acc, value):
-    prev, is_valid = acc
-    if not is_valid:
-        return prev, False
-    return value, abs(prev - value) <= 3
-
 
 def is_save(report):
     if sorted(report) != report and sorted(report, reverse=True) != report:
