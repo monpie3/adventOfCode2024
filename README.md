@@ -18,5 +18,12 @@ You can find the puzzle inputs here: [https://adventofcode.com/2024](https://adv
 - How to use Git credential store on WSL → [🔗](https://stackoverflow.com/questions/45925964/how-to-use-git-credential-store-on-wsl-ubuntu-on-windows)
 - How to change the default editor from nano to vim → [🔗](https://askubuntu.com/questions/539243/how-to-change-visudo-editor-from-nano-to-vim)
 
+## Day 2:
+![meme from day 2](/memes/day_02.png)
 
+## Day 3:
+- A good reminder that `.` by default matches any character except a new line.  So, I learned about [DOTALL](https://docs.python.org/3/library/re.html#re.DOTALL) flag.
+- I came across this website: https://regexcrossword.com/
+
+![meme from day 3](/memes/day_03.png)
 ---
