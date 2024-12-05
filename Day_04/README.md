@@ -29,7 +29,7 @@ MAMMMXMMMM
 MXMXAXMASX
 ```
 
-In this word search, `XMAS` occurs a total of `_18_` times; here's the same word search again, but where letters not involved in any `XMAS` have been replaced with `.`:
+In this word search, `XMAS` occurs a total of `18` times; here's the same word search again, but where letters not involved in any `XMAS` have been replaced with `.`:
 
 ```
 ....XXMAS.
@@ -49,3 +49,41 @@ Take a look at the little Elf's word search. _How many times does `XMAS` appear?
 Your puzzle answer was `[REDACTED]`.
 
 The first half of this puzzle is complete! It provides one gold star: ⭐
+
+
+## \--- Part Two ---
+
+The Elf looks quizzically at you. Did you misunderstand the assignment?
+
+Looking for the instructions, you flip over the word search to find that this isn't actually an `XMAS` puzzle; it's an `_X-MAS_` puzzle in which you're supposed to find two `MAS` in the shape of an `X`. One way to achieve that is like this:
+
+```
+M.S
+.A.
+M.S
+```
+
+Irrelevant characters have again been replaced with `.` in the above diagram. Within the `X`, each `MAS` can be written forwards or backwards.
+
+Here's the same example from before, but this time all of the `X-MAS`es have been kept instead:
+
+```
+.M.S......
+..A..MSMS.
+.M.S.MAA..
+..A.ASMSM.
+.M.S.M....
+..........
+S.S.S.S.S.
+.A.A.A.A..
+M.M.M.M.M.
+..........
+```
+
+In this example, an `X-MAS` appears `9` times.
+
+Flip the word search from the instructions back over to the word search side and try again. _How many times does an `X-MAS` appear?_
+
+Your puzzle answer was `[REDACTED]`.
+
+Both parts of this puzzle are complete! They provide two gold stars: ⭐⭐
