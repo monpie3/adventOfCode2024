@@ -75,7 +75,7 @@ For some reason, the Elves also need to know the _middle page number_ of each up
 75,29,13
 ```
 
-These have middle page numbers of `61`, `53`, and `29` respectively. Adding these page numbers together gives `_143_`.
+These have middle page numbers of `61`, `53`, and `29` respectively. Adding these page numbers together gives `143`.
 
 Of course, you'll need to be careful: the actual list of _page ordering rules_ is bigger and more complicated than the above example.
 
@@ -84,3 +84,23 @@ Determine which updates are already in the correct order. _What do you get if yo
 Your puzzle answer was `[REDACTED]`.
 
 The first half of this puzzle is complete! It provides one gold star: ⭐
+
+
+## \--- Part Two ---
+
+While the Elves get to work printing the correctly-ordered updates, you have a little time to fix the rest of them.
+
+For each of the _incorrectly-ordered updates_, use the page ordering rules to put the page numbers in the right order. For the above example, here are the three incorrectly-ordered updates and their correct orderings:
+
+- `75,97,47,61,53` becomes `97,75,_47_,61,53`.
+- `61,13,29` becomes `61,_29_,13`.
+- `97,13,75,29,47` becomes `97,75,_47_,29,13`.
+
+After taking _only the incorrectly-ordered updates_ and ordering them correctly, their middle page numbers are `47`, `29`, and `47`. Adding these together produces `123`.
+
+Find the updates which are not in the correct order. _What do you get if you add up the middle page numbers after correctly ordering just those updates?_
+
+
+Your puzzle answer was `[REDACTED]`.
+
+Both parts of this puzzle are complete! They provide two gold stars: ⭐⭐
