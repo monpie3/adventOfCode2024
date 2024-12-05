@@ -19,11 +19,14 @@ You can find the puzzle inputs here: [https://adventofcode.com/2024](https://adv
 - How to change the default editor from nano to vim → [🔗](https://askubuntu.com/questions/539243/how-to-change-visudo-editor-from-nano-to-vim)
 
 ## Day 2:
-![meme from day 2](/memes/day_02.png)
+[![meme from day 2](/memes/day_02.png)](https://www.reddit.com/r/adventofcode/comments/1h4pelm/2024_day_2_part_2_the_actual_elves_in_part_2/)
+
 
 ## Day 3:
 - A good reminder that `.` by default matches any character except a new line.  So, I learned about [DOTALL](https://docs.python.org/3/library/re.html#re.DOTALL) flag.
 - I came across this website: https://regexcrossword.com/
 
-![meme from day 3](/memes/day_03.png)
+[![meme from day 3](/memes/day_03.png)](https://www.reddit.com/r/adventofcode/comments/1h5uhsu/2024_day_3_summarized_in_one_picture/)
 ---
+## Day 4:
+[![meme from day 4](/memes/day_04.png)](https://www.reddit.com/r/adventofcode/comments/1h6bls8/2024_day_4_part_2_small_misunderstanding/)
