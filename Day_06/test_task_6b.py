@@ -11,7 +11,7 @@ def test_patrol():
     lab_map = load_lab_map("Day_06/example_6a.txt")
     start_position = find_guard_position(lab_map)
     start_direction = find_guard_direction(lab_map, start_position)
-    assert len(patrol(lab_map, start_position, start_direction)) == 41
+    assert len(patrol(lab_map, start_position, start_direction)[0]) == 41
 
 
 def test_patrol_when_guard_does_multiple_turns():
@@ -19,14 +19,14 @@ def test_patrol_when_guard_does_multiple_turns():
     lab_map = load_lab_map("Day_06/example_6b.txt")
     start_position = find_guard_position(lab_map)
     start_direction = find_guard_direction(lab_map, start_position)
-    assert len(patrol(lab_map, start_position, start_direction)) == 2
+    assert len(patrol(lab_map, start_position, start_direction)[0]) == 2
 
 
 def test_add_obstration():
     lab_map = load_lab_map("Day_06/example_6a.txt")
     start_position = find_guard_position(lab_map)
     start_direction = find_guard_direction(lab_map, start_position)
-    current_area = patrol(lab_map, start_position, start_direction)
+    current_area = patrol(lab_map, start_position, start_direction)[0]
     del current_area[start_position]
     assert add_obstructions(lab_map, current_area, start_position, start_direction) == 6
 
@@ -35,6 +35,6 @@ def test_add_obstration_when_guard_does_multiple_turns():
     lab_map = load_lab_map("Day_06/example_6c.txt")
     start_position = find_guard_position(lab_map)
     start_direction = find_guard_direction(lab_map, start_position)
-    current_area = patrol(lab_map, start_position, start_direction)
+    current_area = patrol(lab_map, start_position, start_direction)[0]
     del current_area[start_position]
     assert add_obstructions(lab_map, current_area, start_position, start_direction) == 0

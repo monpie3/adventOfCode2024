@@ -1,4 +1,22 @@
-import copy
+from functools import wraps
+
+
+def restore_map_after(func):
+    @wraps(func)
+    def wrapper(lab_map, start_position, start_direction, *args, **kwargs):
+        result = func(lab_map, start_position, start_direction, *args, **kwargs)
+
+        # clean map
+        explored_positions = result[0]
+        for pos in explored_positions.keys():
+            lab_map[pos[0]][pos[1]] = "."
+
+        lab_map[start_position[0]][start_position[1]] = start_direction
+
+        return result
+
+    return wrapper
+
 
 def load_lab_map(filename):
     lab_map = ""
@@ -53,6 +71,7 @@ def is_leaving(cur_pos, direciton, rows, cols):
     return False
 
 
+@restore_map_after
 def patrol(lab_map, start_position, start_direction, ending_condition="leave"):
     rows = len(lab_map)
     cols = len(lab_map[0])
@@ -99,31 +118,31 @@ def patrol(lab_map, start_position, start_direction, ending_condition="leave"):
 
         if ending_condition == "loop":
             if left_patrol == True:
-                return False
+                return (explored_positions, False)
 
             if lab_map[x][y] in explored_positions.get((x, y), []):
-                return True
+                return (explored_positions, True)
 
         if (x, y) not in explored_positions.keys():
             explored_positions[(x, y)] = [lab_map[x][y]]
-    return explored_positions
+
+    return (explored_positions, False)
 
 
 def add_obstructions(lab_map, current_area, start_position, start_direction):
     total = 0
     for obstacle in current_area:
-        modified_lab_map = copy.deepcopy(lab_map)
-        modified_lab_map[obstacle[0]][obstacle[1]] = "#"
-        total += patrol(modified_lab_map, start_position, start_direction, "loop")
+        lab_map[obstacle[0]][obstacle[1]] = "#"
+        total += patrol(lab_map, start_position, start_direction, "loop")[1]
+        lab_map[obstacle[0]][obstacle[1]] = "."
     return total
 
 
 if __name__ == "__main__":
     lab_map = load_lab_map("Day_06/puzzle_input.txt")
-    patrol_map = copy.deepcopy(lab_map)
     start_position = find_guard_position(lab_map)
     start_direction = find_guard_direction(lab_map, start_position)
 
-    current_area = patrol(patrol_map, start_position, start_direction)
+    current_area = patrol(lab_map, start_position, start_direction)[0]
     del current_area[start_position]
     print(add_obstructions(lab_map, current_area, start_position, start_direction))
