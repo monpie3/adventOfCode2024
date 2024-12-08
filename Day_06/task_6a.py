@@ -61,7 +61,6 @@ def patrol(lab_map):
         if lab_map[x][y] == "^":
             next_x, next_y = up(x, y)
             if lab_map[next_x][next_y] == "#":
-                x, y = right(x, y)
                 lab_map[x][y] = ">"
             else:
                 x, y = up(x, y)
@@ -70,7 +69,6 @@ def patrol(lab_map):
         elif lab_map[x][y] == "v":
             next_x, next_y = down(x, y)
             if lab_map[next_x][next_y] == "#":
-                x, y = left(x, y)
                 lab_map[x][y] = "<"
             else:
                 x, y = down(x, y)
@@ -79,7 +77,6 @@ def patrol(lab_map):
         elif lab_map[x][y] == "<":
             next_x, next_y = left(x, y)
             if lab_map[next_x][next_y] == "#":
-                x, y = up(x, y)
                 lab_map[x][y] = "^"
             else:
                 x, y = left(x, y)
@@ -88,7 +85,6 @@ def patrol(lab_map):
         elif lab_map[x][y] == ">":
             next_x, next_y = right(x, y)
             if lab_map[next_x][next_y] == "#":
-                x, y = down(x, y)
                 lab_map[x][y] = "v"
             else:
                 x, y = right(x, y)
