@@ -51,3 +51,19 @@ You can find the puzzle inputs here: [https://adventofcode.com/2024](https://adv
 -   The go-to solution: `itertools.product`
 
 [![meme from day 7](/memes/day_07.png)](https://www.reddit.com/r/adventofcode/comments/1h8xiga/2024_aoc_is_the_year_of_bruteforcing_anyway/)
+
+## Day 8
+
+- Using the next iterator from [`itertools`](https://docs.python.org/3/library/itertools.html) → `combinations`
+
+- A cleaner way to handle this kind of logic. Instead of writing:
+```
+if cell not in antenna_positions:
+    antenna_positions[cell] = [(row_ind, col_ind)]
+else:
+    antenna_positions[cell].append((row_ind, col_ind))
+```
+We can refactor it to be more concise:
+`antenna_positions.setdefault(cell, []).append((row_ind, col_ind))`
+
+Alternatively, we can use `defaultdict` from `collections`, which automatically provides a default value for the key that doesn't exist.
