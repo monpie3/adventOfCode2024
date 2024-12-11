@@ -67,3 +67,9 @@ We can refactor it to be more concise:
 `antenna_positions.setdefault(cell, []).append((row_ind, col_ind))`
 
 Alternatively, we can use `defaultdict` from `collections`, which automatically provides a default value for the key that doesn't exist.
+
+
+## Day 10
+[![meme from day 10](/memes/day_10.png)](https://www.reddit.com/r/adventofcode/comments/1hbbtdd/2024_day_10/)
+
+Been there, done that 😅
