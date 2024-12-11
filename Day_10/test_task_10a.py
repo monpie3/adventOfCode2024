@@ -11,6 +11,6 @@ import pytest
         ("Day_10/example_10d.txt", 36),
     ],
 )
-def test_unpack_disk(file_path, expected):
+def test_find_trailhead(file_path, expected):
     topographic_map = load_map(file_path)
     assert find_trailhead(topographic_map) == expected
