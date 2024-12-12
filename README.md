@@ -73,3 +73,9 @@ Alternatively, we can use `defaultdict` from `collections`, which automatically 
 [![meme from day 10](/memes/day_10.png)](https://www.reddit.com/r/adventofcode/comments/1hbbtdd/2024_day_10/)
 
 Been there, done that 😅
+
+
+## Day 11
+The choice of a dynamic list as a data container was not the best. It turns out that order was not important at all, and it would have been much better to use a hash map where the key would be the engraved number and the value the number of occurrences.
+
+[![nicer solution for day 11](/memes/day_11.png)](https://www.reddit.com/r/adventofcode/comments/1hbm0al/comment/m1lgvua/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)
