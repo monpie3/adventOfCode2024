@@ -61,3 +61,14 @@ Consider the arrangement of stones in front of you. _How many stones will you ha
 Your puzzle answer was `[REDACTED]`.
 
 The first half of this puzzle is complete! It provides one gold star: ⭐
+
+
+## \--- Part Two ---
+
+The Historians sure are taking a long time. To be fair, the infinite corridors _are_ very large.
+
+_How many stones would you have after blinking a total of 75 times?_
+
+Your puzzle answer was `[REDACTED]`.
+
+Both parts of this puzzle are complete! They provide two gold stars: ⭐⭐
