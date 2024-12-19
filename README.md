@@ -84,3 +84,9 @@ The choice of a dynamic list as a data container was not the best. It turns out 
 ## Day 17
 
 The [match](https://docs.python.org/3/tutorial/controlflow.html#tut-match) statement is a more elegant alternative to `if...elif...else` ✨
+
+## Day 18
+[![meme from day 18](/memes/day_18.png)](https://www.reddit.com/r/adventofcode/comments/1hgz05a/2024_day_18_pinch_me_it_worked/)
+
+
+Brute force was good enough, so I stuck with it. Apparently, you can practically reuse part 2 from day 16 (you just need to remove the condition about 1000 points → [🔗](https://www.reddit.com/r/adventofcode/comments/1hguacy/comment/m2q835j/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)), but I don’t have that part ready yet, so we’ll see in the future 😅
