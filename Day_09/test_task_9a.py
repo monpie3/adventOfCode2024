@@ -13,7 +13,6 @@ def test_unpack_disk(file_path, expected):
     disk_map = load_map(file_path)
     disk_dict = unpack_disk(disk_map)
     unpacked = "".join(str(disk_dict[i]) for i in range(0, len(disk_dict)))
-    # works because the file id is less than 10
     assert unpacked == expected
 
 
@@ -28,7 +27,6 @@ def test_compress(file_path, expected):
     disk_map = load_map(file_path)
     disk_dict = unpack_disk(disk_map)
     compressed_dict = compress(disk_dict)
-    # works because the file id is less than 10
     compressed = "".join(
         str(compressed_dict[i]) for i in range(0, len(compressed_dict))
     )
@@ -46,5 +44,4 @@ def test_get_checksum(file_path, expected):
     disk_map = load_map(file_path)
     disk_dict = unpack_disk(disk_map)
     compressed_dict = compress(disk_dict)
-    # works because the file id is less than 10
     assert get_checksum(compressed_dict) == expected

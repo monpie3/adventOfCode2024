@@ -52,6 +52,10 @@ def get_checksum(compressed_dict):
     return total
 
 
+# def print_disk(disk_dict):
+#     print("".join(str(disk_dict[i]) for i in range(0, len(disk_dict))))
+
+
 if "__main__" == __name__:
     disk_map = load_map("Day_09/puzzle_input.txt")
     disk_dict = unpack_disk(disk_map)
