@@ -69,6 +69,11 @@ We can refactor it to be more concise:
 Alternatively, we can use `defaultdict` from `collections`, which automatically provides a default value for the key that doesn't exist.
 
 
+## Day 09
+In part two, I got rid of `OrderedDict` since I hadn't  actually used it in part one anyway.
+To improve performance, I changed the structure from `index: file_id` to `file_id: [list of indices]`, as searching through the old dictionary was painfully slow.
+I also replaced the while loop with a for loop (always a pleasure) 😇
+
 ## Day 10
 [![meme from day 10](/memes/day_10.png)](https://www.reddit.com/r/adventofcode/comments/1hbbtdd/2024_day_10/)
 
