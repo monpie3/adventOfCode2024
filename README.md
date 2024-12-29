@@ -95,3 +95,7 @@ The [match](https://docs.python.org/3/tutorial/controlflow.html#tut-match) state
 
 
 Brute force was good enough, so I stuck with it. Apparently, you can practically reuse part 2 from day 16 (you just need to remove the condition about 1000 points → [🔗](https://www.reddit.com/r/adventofcode/comments/1hguacy/comment/m2q835j/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)), but I don’t have that part ready yet, so we’ll see in the future 😅
+
+## Day 20
+Part 1: I forgot that two picoseconds are needed for the cheating, so the distance isn’t simply the difference between the end position index and the start position index—we need to reduce it by 2.
+
