@@ -86,6 +86,16 @@ The choice of a dynamic list as a data container was not the best. It turns out 
 [![nicer solution for day 11](/memes/day_11.png)](https://www.reddit.com/r/adventofcode/comments/1hbm0al/comment/m1kau09/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)
 
 
+I also read that returning from a `with` block (e.g., when opening a file) works fine, and the file is automatically closed. The `with` statement ensures cleanup happens, whether the block exits normally or via a return.  [🔗](https://stackoverflow.com/questions/9885217/in-python-if-i-return-inside-a-with-block-will-the-file-still-close)
+
+
+## Day 12
+I probably would have done better if my `puzzle_input` had been correct instead of last year's 😅
+But this was one of those tasks I really liked (aside from the wrong input), where I had to grab a sheet of paper and a pen to plan it out.
+What I’m proud of is that I came up with the correct perimeter formula right away. Even though it’s a bit basic, it works!
+
+[![amazing trolling from JS](/memes/day_12.png)](https://www.reddit.com/r/adventofcode/comments/1hcyh1x/2024_day_12_when_your_code_is_a_standup_comedian/)
+
 ## Day 17
 
 The [match](https://docs.python.org/3/tutorial/controlflow.html#tut-match) statement is a more elegant alternative to `if...elif...else` ✨
