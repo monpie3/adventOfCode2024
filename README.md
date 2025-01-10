@@ -96,6 +96,16 @@ What I’m proud of is that I came up with the correct perimeter formula right a
 
 [![amazing trolling from JS](/memes/day_12.png)](https://www.reddit.com/r/adventofcode/comments/1hcyh1x/2024_day_12_when_your_code_is_a_standup_comedian/)
 
+## Day 14
+In my case, searching for the Easter egg using the smallest safety factor didn’t work (though it turns out it was the *second* smallest result!). However, I listed all the possible cases, and after entering `5000` as an answer, I knew the range I should focus on (which at least halved my search efforts 😅).
+
+I think it wasn’t the best idea to store robot positions as JSON. Using images with `PIL` would probably have been faster, but I wanted to avoid libraries that require additional installation (`tqdm` doesn’t count—it’s just a little helper to check if my program is still running).
+
+I know some people enjoyed this task, but after browsing Reddit, I feel it’s too dependent on the input. I don’t like that someone might solve it just because they got lucky, rather than because their method works for everyone or because they caught on to something critical in the task’s description.
+
+![my tree](memes/day_14.png.png)
+
+
 ## Day 17
 
 The [match](https://docs.python.org/3/tutorial/controlflow.html#tut-match) statement is a more elegant alternative to `if...elif...else` ✨
