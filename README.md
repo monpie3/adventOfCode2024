@@ -96,6 +96,11 @@ What I’m proud of is that I came up with the correct perimeter formula right a
 
 [![amazing trolling from JS](/memes/day_12.png)](https://www.reddit.com/r/adventofcode/comments/1hcyh1x/2024_day_12_when_your_code_is_a_standup_comedian/)
 
+## Day 13
+I didn't want to reinvent the wheel, so I just went with `sympy`. Two equations with two unknowns. It was fun to solve the test examples on paper.
+
+[![meme partially about day 13](/memes/day_13.png)](https://xkcd.com/1838/)
+
 ## Day 14
 In my case, searching for the Easter egg using the smallest safety factor didn’t work (though it turns out it was the *second* smallest result!). However, I listed all the possible cases, and after entering `5000` as an answer, I knew the range I should focus on (which at least halved my search efforts 😅).
 
