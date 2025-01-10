@@ -6,6 +6,7 @@ You can find the puzzle inputs here: [https://adventofcode.com/2024](https://adv
 
 ### Recap of my progress in Advent of Code so far:
 
+-   2024: 25 days (42 ⭐)
 -   [2023](https://github.com/monpie3/adventOfCode2023): 22 days (36 ⭐)
 -   [2020](https://github.com/monpie3/adventOfCode2020): 10 days (19 ⭐)
 
@@ -108,7 +109,7 @@ I think it wasn’t the best idea to store robot positions as JSON. Using images
 
 I know some people enjoyed this task, but after browsing Reddit, I feel it’s too dependent on the input. I don’t like that someone might solve it just because they got lucky, rather than because their method works for everyone or because they caught on to something critical in the task’s description.
 
-![my tree](memes/day_14.png.png)
+![my tree](memes/day_14.png)
 
 
 ## Day 17
