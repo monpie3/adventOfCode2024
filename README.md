@@ -6,7 +6,7 @@ You can find the puzzle inputs here: [https://adventofcode.com/2024](https://adv
 
 ### Recap of my progress in Advent of Code so far:
 
--   2024: 25 days (42 ⭐)
+-   2024: 25 days (43 ⭐)
 -   [2023](https://github.com/monpie3/adventOfCode2023): 22 days (36 ⭐)
 -   [2020](https://github.com/monpie3/adventOfCode2020): 10 days (19 ⭐)
 
@@ -121,6 +121,50 @@ The [match](https://docs.python.org/3/tutorial/controlflow.html#tut-match) state
 
 
 Brute force was good enough, so I stuck with it. Apparently, you can practically reuse part 2 from day 16 (you just need to remove the condition about 1000 points → [🔗](https://www.reddit.com/r/adventofcode/comments/1hguacy/comment/m2q835j/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)), but I don’t have that part ready yet, so we’ll see in the future 😅
+## Day 19
+
+[![meme from day 19](/memes/day_19.png)](https://www.reddit.com/r/adventofcode/comments/1hhmo09/2024_day_19_part_2_whats_the_magic_word/)
+
+Initially, I tried to avoid checking all towel patterns and thought I could prevent the algorithm from being too greedy by starting with the largest patterns.
+
+```
+max_len = max([len(pattern) for pattern in towels])
+to_check = design
+while len(to_check) > 0:
+    is_found = False
+    for i in range(max_len):
+        if to_check[:i] in towels:
+            to_check = to_check[i:]
+            is_found = True
+            break
+    if not is_found:
+        return False
+return True
+```
+
+This approach worked in cases like this:
+Towels: `ab, abc, def`
+Design: `abcdef`
+
+Even though the first towel pattern was `ab`, because I started from the sorted list, I checked `abc` first. Combining `abc` and `def` gave the correct result: `abc` + `def` = `abcdef`.
+
+However, while the algorithm was still greedy, it was greedy *from the end* 😅.
+
+For example:
+Towels: `abcd, abc, def`
+Design: `abcdef`
+
+Starting from the longest pattern (`abcd`), the remainder `ef` didn’t match. The correct configuration, `abc` + `def` = `abcdef`, was missed because the algorithm didn’t check all possible combinations.
+
+So, I abandoned the `while` loop and switched to recursion. There, I check all the patterns, and if there is a combination of patterns that matches, the function returns `True`. If the design fails at some point, it backtracks to the previous state and tries the next possible pattern.
+
+Additinaly, I could simplify function by replacing the loop:
+```
+valid = 0
+for design in designs:
+    valid += is_design_valid(design)
+```
+with `sum(map(is_design_valid, designs))`  ✨
 
 ## Day 20
 Part 1: I forgot that two picoseconds are needed for the cheating, so the distance isn’t simply the difference between the end position index and the start position index—we need to reduce it by 2.
