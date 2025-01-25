@@ -8,6 +8,7 @@ def load_data(filename):
     towels = [towel for towel in towels.split(", ")]
     return towels, designs.strip().split("\n")
 
+
 def count_valid_designs(towels, designs):
 
     @functools.cache
@@ -31,6 +32,7 @@ def count_valid_designs(towels, designs):
         valid += is_design_valid(design)
 
     return valid
+
 
 if __name__ == "__main__":
     towels, designs = load_data("Day_19/puzzle_input.txt")
