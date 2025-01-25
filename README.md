@@ -116,16 +116,33 @@ I know some people enjoyed this task, but after browsing Reddit, I feel it’s t
 
 The [match](https://docs.python.org/3/tutorial/controlflow.html#tut-match) statement is a more elegant alternative to `if...elif...else` ✨
 
+Plus, instead of struggling with split to parse a file, like this:
+
+```
+def load_data(filename):
+    with open(filename, "r") as file:
+        registers, program = file.read().split("\n\n")
+
+    registers = [int(register.split(": ")[1]) for register in registers.split("\n")]
+    program = program.strip().split(": ")[1].split(",")
+    return registers, list(map(int, program))
+```
+
+I could simply use regex and unpack it in one line:
+`a, b, c, *prog = map(int, re.findall(r'\d+',
+                     open('in.txt').read()))` [🔗](https://www.reddit.com/r/adventofcode/comments/1hg38ah/comment/m2gliho/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)
+
 ## Day 18
-[![meme from day 18](/memes/day_18.png)](https://www.reddit.com/r/adventofcode/comments/1hgz05a/2024_day_18_pinch_me_it_worked/)
+
 
 
 Brute force was good enough, so I stuck with it. Apparently, you can practically reuse part 2 from day 16 (you just need to remove the condition about 1000 points → [🔗](https://www.reddit.com/r/adventofcode/comments/1hguacy/comment/m2q835j/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)), but I don’t have that part ready yet, so we’ll see in the future 😅
+
+[![meme from day 18](/memes/day_18.png)](https://www.reddit.com/r/adventofcode/comments/1hgz05a/2024_day_18_pinch_me_it_worked/)
 ## Day 19
 
-[![meme from day 19](/memes/day_19.png)](https://www.reddit.com/r/adventofcode/comments/1hhmo09/2024_day_19_part_2_whats_the_magic_word/)
 
-Initially, I tried to avoid checking all towel patterns and thought I could prevent the algorithm from being too greedy by starting with the largest patterns.
+Part I: Initially, I tried to avoid checking all towel patterns and thought I could prevent the algorithm from being too greedy by starting with the largest patterns.
 
 ```
 max_len = max([len(pattern) for pattern in towels])
@@ -165,6 +182,8 @@ for design in designs:
     valid += is_design_valid(design)
 ```
 with `sum(map(is_design_valid, designs))`  ✨
+
+[![meme from day 19](/memes/day_19.png)](https://www.reddit.com/r/adventofcode/comments/1hhmo09/2024_day_19_part_2_whats_the_magic_word/)
 
 ## Day 20
 Part 1: I forgot that two picoseconds are needed for the cheating, so the distance isn’t simply the difference between the end position index and the start position index—we need to reduce it by 2.
