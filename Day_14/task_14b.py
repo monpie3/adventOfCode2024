@@ -1,7 +1,9 @@
-import re
 import copy
+import itertools
 import json
-import tqdm
+import re
+
+# import tqdm
 
 
 def load_data(filename):
@@ -96,7 +98,7 @@ def save_json_as_html(file_path):
     """
 
     # Add each block to the HTML
-    for t, easter_egg in tqdm.tqdm(map_data.items()):
+    for t, easter_egg in map_data.items():
         html_content += f"""
         <div class="map">
             <h3>Time: {t}</h3>
@@ -112,7 +114,7 @@ def save_json_as_html(file_path):
     """
 
     # Save the HTML to a file
-    output_file = "Day_14/day_14.html"
+    output_file = "Day_14/day_14_limited.html"
     with open(output_file, "w") as file:
         file.write(html_content)
 
@@ -124,15 +126,23 @@ if "__main__" == __name__:
     LENGTH = 103
 
     time_limit = WIDTH * LENGTH
+
+    # robots vertically align every 101 steps from X = 9
+    # and horizontally every 103 steps from Y = 65
+    vertical_range = range(9, time_limit, WIDTH)
+    horizontal_range = range(65, time_limit, LENGTH)
+    limited_range = sorted(itertools.chain(vertical_range, horizontal_range))
+
     robots_dict = load_data("Day_14/puzzle_input.txt")
     map_data = {}
 
-    for t in tqdm.tqdm(range(1, time_limit)):
+    for t in limited_range:
+        # for t in tqdm.tqdm(range(1, time_limit)):
         prediction = predit_motion(robots_dict, t, LENGTH, WIDTH)
         map_data[t] = create_robot_pos_map(prediction, LENGTH, WIDTH)
 
     # save map data to json
-    file_path = "Day_14/easter_egg.json"
+    file_path = "Day_14/easter_egg_limited.json"
     with open(file_path, "w") as file:
         json.dump(map_data, file, indent=4)
     print(f"Map data saved to {file_path}")
